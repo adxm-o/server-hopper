@@ -23,10 +23,11 @@ return "https://www.roblox.com/headshot-thumbnail/image?userId="..userId.."&widt
 end
  
 local screenGui = Instance.new("ScreenGui")
-screenGui.Name = "LULU_ServerHop"
+screenGui.Name = "ServerHop"
 screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 screenGui.ResetOnSpawn = false
 screenGui.Parent = coreGui
+ 
 local frame = Instance.new("Frame")
 frame.Name = "MainFrame"
 frame.Size = UDim2.new(0, 300, 0, 280)
@@ -37,12 +38,14 @@ frame.BorderSizePixel = 0
 frame.Active = true
 frame.Draggable = true
 frame.Parent = screenGui
+ 
 local topBar = Instance.new("Frame")
 topBar.Name = "TopBar"
 topBar.Size = UDim2.new(1, 0, 0, 40)
 topBar.BackgroundColor3 = Color3.fromRGB(0, 110, 0)
 topBar.BorderSizePixel = 0
 topBar.Parent = frame
+ 
 local titleLabel = Instance.new("TextLabel")
 titleLabel.Name = "Title"
 titleLabel.Size = UDim2.new(1, -80, 1, 0)
@@ -54,6 +57,7 @@ titleLabel.Font = Enum.Font.SourceSansSemibold
 titleLabel.TextSize = 20
 titleLabel.TextXAlignment = Enum.TextXAlignment.Left
 titleLabel.Parent = topBar
+ 
 local minimizeButton = Instance.new("TextButton")
 minimizeButton.Name = "MinimizeButton"
 minimizeButton.Size = UDim2.new(0, 30, 0, 30)
@@ -66,6 +70,7 @@ minimizeButton.TextSize = 28
 minimizeButton.Font = Enum.Font.SourceSansBold
 minimizeButton.BorderSizePixel = 0
 minimizeButton.Parent = topBar
+ 
 local settingsButton = Instance.new("TextButton")
 settingsButton.Name = "SettingsButton"
 settingsButton.Size = UDim2.new(0, 30, 0, 30)
@@ -78,12 +83,14 @@ settingsButton.TextSize = 28
 settingsButton.Font = Enum.Font.SourceSansBold
 settingsButton.BorderSizePixel = 0
 settingsButton.Parent = topBar
+ 
 local contentFrame = Instance.new("Frame")
 contentFrame.Name = "Content"
 contentFrame.Size = UDim2.new(1, -20, 1, -60)
 contentFrame.Position = UDim2.new(0, 10, 0, 50)
 contentFrame.BackgroundTransparency = 1
 contentFrame.Parent = frame
+ 
 local avatarImage = Instance.new("ImageLabel")
 avatarImage.Name = "Avatar"
 avatarImage.Size = UDim2.new(0, 48, 0, 48)
@@ -92,6 +99,7 @@ avatarImage.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 avatarImage.BorderSizePixel = 0
 avatarImage.Image = getAvatarUrl(player.UserId)
 avatarImage.Parent = contentFrame
+ 
 local usernameLabel = Instance.new("TextLabel")
 usernameLabel.Name = "Username"
 usernameLabel.Size = UDim2.new(1, -58, 0, 26)
@@ -103,6 +111,7 @@ usernameLabel.Font = Enum.Font.SourceSansBold
 usernameLabel.TextSize = 22
 usernameLabel.TextXAlignment = Enum.TextXAlignment.Left
 usernameLabel.Parent = contentFrame
+ 
 local pingFpsLabel = Instance.new("TextLabel")
 pingFpsLabel.Name = "PingFps"
 pingFpsLabel.Size = UDim2.new(1, -58, 0, 24)
@@ -114,6 +123,7 @@ pingFpsLabel.Font = Enum.Font.SourceSans
 pingFpsLabel.TextSize = 17
 pingFpsLabel.TextXAlignment = Enum.TextXAlignment.Left
 pingFpsLabel.Parent = contentFrame
+ 
 local divider = Instance.new("Frame")
 divider.Name = "Divider"
 divider.Size = UDim2.new(1, 0, 0, 1)
@@ -121,12 +131,14 @@ divider.Position = UDim2.new(0, 0, 0, 58)
 divider.BackgroundColor3 = Color3.fromRGB(0, 90, 0)
 divider.BorderSizePixel = 0
 divider.Parent = contentFrame
+ 
 local serverInfoFrame = Instance.new("Frame")
 serverInfoFrame.Name = "ServerInfo"
 serverInfoFrame.Size = UDim2.new(1, 0, 0, 40)
 serverInfoFrame.Position = UDim2.new(0, 0, 0, 68)
 serverInfoFrame.BackgroundTransparency = 1
 serverInfoFrame.Parent = contentFrame
+ 
 local jobIdLabel = Instance.new("TextLabel")
 jobIdLabel.Name = "JobId"
 jobIdLabel.Size = UDim2.new(0.6, -10, 0, 30)
@@ -138,6 +150,7 @@ jobIdLabel.Font = Enum.Font.SourceSans
 jobIdLabel.TextSize = 16
 jobIdLabel.TextXAlignment = Enum.TextXAlignment.Left
 jobIdLabel.Parent = serverInfoFrame
+ 
 local copyButton = Instance.new("TextButton")
 copyButton.Name = "CopyButton"
 copyButton.Size = UDim2.new(0, 60, 0, 28)
@@ -149,6 +162,7 @@ copyButton.TextColor3 = Color3.fromRGB(200, 255, 200)
 copyButton.Font = Enum.Font.SourceSansSemibold
 copyButton.TextSize = 16
 copyButton.Parent = serverInfoFrame
+ 
 local hopButton = Instance.new("TextButton")
 hopButton.Name = "HopButton"
 hopButton.Size = UDim2.new(1, 0, 0, 45)
@@ -160,6 +174,7 @@ hopButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 hopButton.Font = Enum.Font.SourceSansBold
 hopButton.TextSize = 22
 hopButton.Parent = contentFrame
+ 
 local statusLabel = Instance.new("TextLabel")
 statusLabel.Name = "Status"
 statusLabel.Size = UDim2.new(1, 0, 0, 25)
@@ -170,12 +185,14 @@ statusLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
 statusLabel.Font = Enum.Font.SourceSans
 statusLabel.TextSize = 18
 statusLabel.Parent = contentFrame
+ 
 local settingsFrame = Instance.new("Frame")
 settingsFrame.Name = "Settings"
 settingsFrame.Size = UDim2.new(1, 0, 1, 0)
 settingsFrame.BackgroundTransparency = 1
 settingsFrame.Visible = false
 settingsFrame.Parent = contentFrame
+ 
 local settingsTitle = Instance.new("TextLabel")
 settingsTitle.Size = UDim2.new(1, 0, 0, 30)
 settingsTitle.Position = UDim2.new(0, 0, 0, 10)
@@ -185,6 +202,7 @@ settingsTitle.TextColor3 = Color3.fromRGB(0, 255, 0)
 settingsTitle.Font = Enum.Font.SourceSansBold
 settingsTitle.TextSize = 22
 settingsTitle.Parent = settingsFrame
+ 
 local keybindLabel = Instance.new("TextLabel")
 keybindLabel.Size = UDim2.new(1, -20, 0, 25)
 keybindLabel.Position = UDim2.new(0, 10, 0, 45)
@@ -195,6 +213,7 @@ keybindLabel.Font = Enum.Font.SourceSans
 keybindLabel.TextSize = 18
 keybindLabel.TextXAlignment = Enum.TextXAlignment.Left
 keybindLabel.Parent = settingsFrame
+ 
 local toggleLabel = Instance.new("TextLabel")
 toggleLabel.Size = UDim2.new(1, -20, 0, 20)
 toggleLabel.Position = UDim2.new(0, 10, 0, 70)
@@ -205,6 +224,7 @@ toggleLabel.Font = Enum.Font.SourceSans
 toggleLabel.TextSize = 16
 toggleLabel.TextXAlignment = Enum.TextXAlignment.Left
 toggleLabel.Parent = settingsFrame
+ 
 local setKeyButton = Instance.new("TextButton")
 setKeyButton.Size = UDim2.new(0, 120, 0, 35)
 setKeyButton.Position = UDim2.new(0, 10, 0, 100)
@@ -215,6 +235,7 @@ setKeyButton.TextColor3 = Color3.fromRGB(200, 255, 200)
 setKeyButton.Font = Enum.Font.SourceSansSemibold
 setKeyButton.TextSize = 18
 setKeyButton.Parent = settingsFrame
+ 
 local backButton = Instance.new("TextButton")
 backButton.Size = UDim2.new(0, 80, 0, 35)
 backButton.Position = UDim2.new(0, 140, 0, 100)
@@ -225,38 +246,49 @@ backButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 backButton.Font = Enum.Font.SourceSansSemibold
 backButton.TextSize = 18
 backButton.Parent = settingsFrame
+ 
 local setKeyCorner = Instance.new("UICorner")
 setKeyCorner.CornerRadius = UDim.new(0, 8)
 setKeyCorner.Parent = setKeyButton
+ 
 local backCorner = Instance.new("UICorner")
 backCorner.CornerRadius = UDim.new(0, 8)
 backCorner.Parent = backButton
+ 
 local uiStroke = Instance.new("UIStroke")
 uiStroke.Thickness = 1.2
 uiStroke.Color = Color3.fromRGB(0, 130, 0)
 uiStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 uiStroke.Parent = frame
+ 
 local uiCorner = Instance.new("UICorner")
 uiCorner.CornerRadius = UDim.new(0, 10)
 uiCorner.Parent = frame
+ 
 local topCorner = Instance.new("UICorner")
 topCorner.CornerRadius = UDim.new(0, 10)
 topCorner.Parent = topBar
+ 
 local buttonCorner = Instance.new("UICorner")
 buttonCorner.CornerRadius = UDim.new(0, 8)
 buttonCorner.Parent = hopButton
+ 
 local copyCorner = Instance.new("UICorner")
 copyCorner.CornerRadius = UDim.new(0, 6)
 copyCorner.Parent = copyButton
+ 
 local avatarCorner = Instance.new("UICorner")
 avatarCorner.CornerRadius = UDim.new(0, 24)
 avatarCorner.Parent = avatarImage
+ 
 local minimizeCorner = Instance.new("UICorner")
 minimizeCorner.CornerRadius = UDim.new(0, 8)
 minimizeCorner.Parent = minimizeButton
+ 
 local settingsCorner = Instance.new("UICorner")
 settingsCorner.CornerRadius = UDim.new(0, 8)
 settingsCorner.Parent = settingsButton
+ 
 local fps = 0
 runService.RenderStepped:Connect(function()
 fps = fps + 1
@@ -264,6 +296,7 @@ end)
 spawn(function()
 while true do
 wait(1)
+    
 local ping = math.floor(player:GetNetworkPing() * 1000)
 pingFpsLabel.Text = "📶 "..ping.."ms  |  🎮 "..fps.." FPS"
 fps = 0
@@ -392,7 +425,7 @@ userInput.InputBegan:Connect(onInputBegan)
 hopButton.MouseButton1Click:Connect(function()
 statusLabel.Text = "● Hopping to random server..."
 statusLabel.TextColor3 = Color3.fromRGB(255, 200, 0)
-wait(1.5)  -- small wait to minimize rate limiting
+wait(1.5)
 teleportService:Teleport(placeId)
 end)
  
@@ -423,4 +456,8 @@ end
 end)
 runService.Stepped:Connect(saveSettings)
 loadSettings()
+
 end
+
+--it's lwk ahh i'm just testing
+--couldn't figure out how to blacklist servers that you have already joined :/
